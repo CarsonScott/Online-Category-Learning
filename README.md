@@ -1,10 +1,6 @@
  # Online Category-learning and Classification 
 
-An unsupervised machine-learning algorithm that classifies and adapts to input patterns in real-time.
-
-### Overview
-
-This algorithm utilizes two main processes that together allow input patterns to be learned and classified: First, a probability density function is approximated according to a collection of samples. Second, a category is assigned to each new sample with respect to its point on the probability space.
+The following is an outline for an unsupervised machine-learning algorithm that classifies and adapts to input patterns in real-time. It uses two main steps to accomplish this: First, a probability density function is approximated according to a collection of samples. Second, a category is assigned to each new sample with respect to its point on the probability space.
 
 More generally, a multidimensional probability space is generated from on a set of previous observations, and used to comprehend and interpret each incoming observation. A sample represents a point, and the specific location of the point determines how it is classified. A gradient ascent algorithm is used to traverse the space from each sample point to a maximum, resulting in a feasible category estimation for the sample.
 
