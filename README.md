@@ -6,9 +6,9 @@ An unsupervised machine-learning algorithm that classifies and adapts to input p
 
 ### Overview
 
-The categorization process utilizes two fundamental steps in order to function: a learning step, in which a probability density function is approximated to match a set of samples, and a classification step, in which a probability distribution is used to assign each sample with a set of categories. More generally, a multidimensional probability space is generated based on a set of previous samples, and used to comprehend and interpret each incoming sample. A sample represents a point, and the specific location of the point determines how it is classified. A gradient ascent algorithm is used to traverse the space from each sample point to a local maximum, and consequently discovering a feasible category or categories that best label the given sample.
+This algorithm is composed of two main steps: the learning step, where a probability density function is approximated to match a set of samples, and the classification step, where a probability distribution assigns each sample to a category/categories. More generally, a multidimensional probability space is generated based on a set of previous samples, and used to comprehend and interpret each incoming sample. A sample represents a point, and the specific location of the point determines how it is classified. A gradient ascent algorithm is used to traverse the space from each sample point to a local maximum, and consequently discovering a feasible category or categories that best label the given sample.
 
-### Density Approximation
+### Density Estimation
 
 Online learning provides a method of optimization in real-time, enabling one to adapt to environmental changes, indefinitely. A number of problems are introduced however, particularly the need for a process which disposes of irrelevant data in order to make room for important information. This is not only important when useless information is learned, but also (and perhaps more importantly) when previously-relevant information is not longer useful. In each case, the irrelevant information must be filtered out or forgotten, such that the finite memory accessible to a system at any given time is being used as efficiently as possible.
 	
