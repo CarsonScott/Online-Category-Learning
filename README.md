@@ -1,6 +1,6 @@
  # Category learning in real-time
 
-An online ML algorithm that classifies and learns input patterns in real-time.
+An unsupervised machine-learning algorithm that classifies and adapts to input patterns in real-time.
 
 ***
 
