@@ -1,8 +1,6 @@
- # Online Category learning and Classification 
+ # Online Category-learning and Classification 
 
 An unsupervised machine-learning algorithm that classifies and adapts to input patterns in real-time.
-
-***
 
 ### Overview
 
