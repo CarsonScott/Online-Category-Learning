@@ -6,7 +6,9 @@ An unsupervised machine-learning algorithm that classifies and adapts to input p
 
 ### Overview
 
-This algorithm is composed of two main steps: the learning step, where a probability density function is approximated to match a set of samples, and the classification step, where a probability distribution assigns each sample to a category/categories. More generally, a multidimensional probability space is generated based on a set of previous samples, and used to comprehend and interpret each incoming sample. A sample represents a point, and the specific location of the point determines how it is classified. A gradient ascent algorithm is used to traverse the space from each sample point to a local maximum, and consequently discovering a feasible category or categories that best label the given sample.
+This algorithm utilizes two main processes that together allow input patterns to be learned and classified: First, a probability density function is approximated according to a collection of samples. Second, a category is assigned to each new sample with respect to its point on the probability space.
+
+More generally, a multidimensional probability space is generated from on a set of previous observations, and used to comprehend and interpret each incoming observation. A sample represents a point, and the specific location of the point determines how it is classified. A gradient ascent algorithm is used to traverse the space from each sample point to a maximum, resulting in a feasible category estimation for the sample.
 
 ### Density Estimation
 
