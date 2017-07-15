@@ -28,7 +28,7 @@ class Logistic(Function):
 	def __call__(self, x):
 		return self.a / (1+pow(e, -self.c * (x-self.b)))
 
-class Step(Function):
+class Window(Function):
 
 	def __call__(self, x):
 		if x in range(self.b-self.c, self.b+self.c):
