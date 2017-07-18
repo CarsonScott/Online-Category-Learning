@@ -1,25 +1,21 @@
+from Function import *
 from Histogram import *
-from Function import Gaussian, Logistic
 
-class Estimator:
+class Classifier:
 
 	def __init__(self, histogram):
 		self.space = histogram
 		self.growth = Gaussian()
 		self.decay = Logistic()
 
-		self.g_rate = 0.007
-		self.d_rate = 0.0007
+		self.g_rate = 0.05
+		self.d_rate = 0.01
 
-	def setgrowth(self, height, std_dev):
-		self.growth.create(height, None, std_dev)
+	def setgrowth(self, height, stddev):
+		self.growth.create(height, None, stddev)
 
-	def setdecay(self, height, gradient):
-		self.decay.create(height, gradient, gradient)
-		self.decay.reflect()
-
-	def setlimit(self, height, gradient):
-		self.limit.create(height, 0, gradient)
+	def setdecay(self, height, steep):
+		self.decay.create(height, 0, steep)
 
 	def plot(self, x):
 		self.growth.b = x

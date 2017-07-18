@@ -34,3 +34,15 @@ class Window(Function):
 		if x in range(self.b-self.c, self.b+self.c):
 			return self.a
 		return 0
+
+class Step(Function):
+	
+	def __call__(self, x):
+		if x >= self.b:
+			return self.a
+		return 0
+
+class Decay(Function):
+
+	def __call__(self, x):
+		return
