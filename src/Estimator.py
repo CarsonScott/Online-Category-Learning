@@ -9,17 +9,17 @@ class Estimator:
 		self.decay = Logistic()
 
 		self.g_rate = 0.007
-		self.d_rate = 0.0007
+		self.d_rate = 0.001
 
 	def setgrowth(self, height, std_dev):
-		self.growth.create(height, None, std_dev)
+		self.growth.setparams(height, None, std_dev)
 
 	def setdecay(self, height, gradient):
-		self.decay.create(height, gradient, gradient)
+		self.decay.setparams(height, gradient, gradient)
 		self.decay.reflect()
 
 	def setlimit(self, height, gradient):
-		self.limit.create(height, 0, gradient)
+		self.limit.setparams(height, 0, gradient)
 
 	def plot(self, x):
 		self.growth.b = x

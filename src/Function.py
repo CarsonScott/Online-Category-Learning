@@ -2,12 +2,10 @@ e = 2.718281828459
 
 class Function:
 
-	def __init__(self):
-		self.a = None
-		self.b = None
-		self.c = None
+	def __init__(self, a=None, b=None, c=None):
+		self.setparams(a, b, c)
 
-	def create(self, a, b, c):
+	def setparams(self, a=None, b=None, c=None):
 		self.a = a
 		self.b = b
 		self.c = c
