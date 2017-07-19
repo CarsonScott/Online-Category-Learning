@@ -9,7 +9,7 @@ class Estimator:
 		self.decay = Logistic()
 
 		self.g_rate = 0.007
-		self.d_rate = 0.001
+		self.d_rate = 0.003
 
 	def setspace(self, histogram):
 		self.space = histogram
@@ -18,7 +18,7 @@ class Estimator:
 		self.growth.setparams(height, None, std_dev)
 
 	def setdecay(self, height, gradient):
-		self.decay.setparams(height, gradient, gradient)
+		self.decay.setparams(height, 0, gradient)
 		self.decay.reflect()
 
 	def setlimit(self, height, gradient):
@@ -30,14 +30,14 @@ class Estimator:
 		size = self.space.width
 
 		for i in range(x-kernel, x+kernel):
-			if i >= 0 and i < size:
+			if i in range(0, size):
 				self.space.plot(i, self.growth(i) * self.g_rate)
 
 		for i in range(len(self.space.bins)):
 			b = self.space.bins[i]
 
-			if b > 0: b -= abs(self.decay(b)) * self.d_rate
 			if b < 0: b = 0
+			if b > 0: b -= self.decay(b) * self.d_rate
 
 			self.space.bins[i] = b
 

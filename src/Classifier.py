@@ -22,14 +22,14 @@ class Classifier:
 		self.plotter.setdecay(height, grad)
 
 	def select(self, x):
-		classes = []
+		dividers = self.detector.dividers
+		
+		if x < dividers[0]: x = dividers[0]
+		if x > dividers[len(dividers)-1]: x = dividers[len(dividers)-1]
 
-		i = 0
-		for c in self.detector.classes:
-			if x in range(c[0], c[1]): classes.append(i)
-			i += 1
-
-		return classes
+		for i in range(len(dividers)-1):
+			if x in range(dividers[i], dividers[i+1]):
+				return i
 
 	def __call__(self, x):
 		self.plotter.plot(x)
@@ -41,5 +41,5 @@ class Classifier:
 		self.distribution = self.plotter()
 		self.generalization = self.filter(self.distribution)
 
-		factor = int(len(self.generalization) / len(self.distribution))
-		self.abstraction = self.detector(self.generalization, factor)
+		length = len(self.distribution)
+		self.abstraction = self.detector(self.generalization, length)
