@@ -41,11 +41,6 @@ class Propagator:
 		return out
 
 	def function(self, x):
-		return
-
-class Mean(Propagator):
-
-	def function(self, x):
 		l = x[0]
 		u = x[0]
 
@@ -55,3 +50,4 @@ class Mean(Propagator):
 	
 		step = Step(self.a, self.c)
 		return step(u-l)
+

@@ -3,13 +3,16 @@ from Function import Gaussian, Logistic
 
 class Estimator:
 
-	def __init__(self, histogram):
+	def __init__(self, histogram=None):
 		self.space = histogram
 		self.growth = Gaussian()
 		self.decay = Logistic()
 
 		self.g_rate = 0.007
 		self.d_rate = 0.001
+
+	def setspace(self, histogram):
+		self.space = histogram
 
 	def setgrowth(self, height, std_dev):
 		self.growth.setparams(height, None, std_dev)
@@ -28,13 +31,15 @@ class Estimator:
 
 		for i in range(x-kernel, x+kernel):
 			if i >= 0 and i < size:
-				self.space(i, self.growth(i) * self.g_rate)
+				self.space.plot(i, self.growth(i) * self.g_rate)
 
-	def update(self):
 		for i in range(len(self.space.bins)):
 			b = self.space.bins[i]
 
-			if b > 0: b -= self.decay(b) * self.d_rate
+			if b > 0: b -= abs(self.decay(b)) * self.d_rate
 			if b < 0: b = 0
 
 			self.space.bins[i] = b
+
+	def __call__(self):
+		return self.space.bins
