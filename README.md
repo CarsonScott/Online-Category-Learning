@@ -31,3 +31,7 @@ Finally, the binary space is transformed into a sparse array that reperesents bo
 ![Feature Space](https://github.com/CarsonScott/Online-Category-Learning/blob/master/img/Feature%20Space.PNG)
 
 ### Features: 6
+
+A feature exists if it satisfies a set of boundary constraints with respect to the spatial relations between each boundary. On one dimension, the constraints call for two boundaries- one on either side of a given point- to be considered valid. Any space between two boundaries is considered a class, and the locations for each boundary are chosen with respect to the binary space, specifically the points where a step in the space is made either up or down.
+
+![Combined](https://github.com/CarsonScott/Online-Category-Learning/blob/master/img/All.PNG)
