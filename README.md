@@ -12,6 +12,8 @@ When a sample is received, a Gaussian function is multiplied by a learning rate 
 
 ![Density Estimation](https://github.com/CarsonScott/Online-Category-Learning/blob/master/img/Density%20approximation.PNG)
 
+### Examples
+
 The resulting probability space and its derivatives are used to identify the subspaces that represent features or classes, as well as the boundaries between them. Classees are learned based on the relative frequency of a sample at any given time being an instance of that class. Therefore the goal is to generate a space of simple boundary points our lines.
 
 ![Probability Space](https://github.com/CarsonScott/Online-Category-Learning/blob/master/img/Probability%20Space.PNG)
