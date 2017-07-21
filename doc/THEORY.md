@@ -5,29 +5,36 @@ Pattern Recognition requires a generalized representation of a pattern, by which
 Variables can have “spatial relevance”, where the points of the variable space are related with respect to distance, meaning that points are more similar to nearby points than they are to those further away. This is referred to as being continuous. If a variable does not have spatial relevance, then the points of the variable space have no implicit relations to each other. This is referred to as being discrete.
 
 Spatial relevance may be induced on a discrete space if the points are connected in a network, and distance is measured by the number of steps it takes to traverse between any two points. For example, if point A is connected to B, and B to C, then the distance between A and C is 2, because it is B is a required step one must take to travel from one to the other. This is equivalent to a continuous space where the distance from point 1 to point 3 is 2. Therefore a continuous space is simply a discrete space with a built-in network that links elements in a chain. That is, a network of points with connections to those immediately before and immediately after.
-Continuous Space
-        o o o o o
-        |_|_|_|_|
 
-discrete Space
-o o o o o
-|___| |_|
+Continuous Space
+        
+    o o o o o
+    |_|_|_|_|
+
+Discrete Space
+
+    o o o o o
+    |___| |_|
+
 A formal model is defined by a point array and an association matrix, where there are two dimensions representing the array on each axis, and the cells representing the relations between any two elements.
+
 Point Array
-o o o
- 1 2 3 
+
+    o o o
+    1 2 3 
 
 Association Matrix
-1 o o o
-2 o o o
-3 o o o
-  1 2 3
+
+    1 o o o
+    2 o o o
+    3 o o o
+      1 2 3
 
 Continuous spaces therefore contain the following association matrix:
 
-1 o - o o o
-2 o o - o o
-3 o o o - o
-4 o o o o -
-5 o o o o o
-  1 2 3 4 5
+    1 o - o o o
+    2 o o - o o
+    3 o o o - o
+    4 o o o o -
+    5 o o o o o
+      1 2 3 4 5
